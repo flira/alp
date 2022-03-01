@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: c2VnZWM=
+      WORDPRESS_DB_NAME: cplpdb
+    volumes:
+      - ./backup:/var/www/html/wp-backup
+      - wordpress:/var/www/html
+    ports:
+      - 8000:80
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: cplpdb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: c2VnZWM=
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:
+  wordpress:
