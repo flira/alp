@@ -1,16 +1,31 @@
-html,
-body {
-  padding: 0;
+html {
+  color: var(--color-gray-1);
+  font: var(--font-size-default)/1.3 var(--font-family-default);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  line-height: 1.167;
+}
+
+h1 {
+  font-size: 2.67rem;
+  margin-bottom: 2.67rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main > section {
+  padding: calc(var(--font-size-default) * 2) var(--font-size-default);
+}
+
+.no-list-style {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  list-style: none;
+  padding-inline-start: 0;
 }
