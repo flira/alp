@@ -1,5 +1,26 @@
-import type { Partner } from './Partner';
-import type { WpImage } from './WpImage';
-import type { Pages, PageResponse } from "./Pages";
+import { AlpAbout, AlpAboutContent } from './About';
+import { AlpHero, AlpHeroContent } from './Hero';
+import { AlpMenuItem } from './Menu';
+import { AlpPartner, AlpPartnerContent } from './Partners';
+import { AlpPage, Pages, PageResponse } from "./Pages";
+import { AlpProduct, AlpProductContent } from './Products';
+import { backgroundProps, ResponsiveBackgroundContent } from './ResponsiveBackground';
+import { WpImage } from './WpImage';
 
-export { Pages, PageResponse, Partner, WpImage }
+export {
+  AlpAbout,
+  AlpAboutContent,
+  AlpHero,
+  AlpHeroContent,
+  AlpMenuItem,
+  AlpPage,
+  AlpPartner,
+  AlpPartnerContent,
+  AlpProduct,
+  AlpProductContent,
+  backgroundProps,
+  Pages,
+  PageResponse,
+  ResponsiveBackgroundContent,
+  WpImage
+};

@@ -1,23 +1,36 @@
-import type { NextPage } from 'next';
-import type { MouseEventHandler } from 'react';
-import CSS from '../../styles/Menu.module.css';
+import { MouseEventHandler, useState, useEffect } from 'react';
+import React from 'react';
+import CSS from './menu.module.css';
 
-const MenuItem: NextPage<{ anchorId: string }> = ({ anchorId, children }) => {
-  const element: HTMLElement | null = document.getElementById(anchorId);
+function MenuItem({
+  target,
+  children }: {
+    target: React.RefObject<HTMLElement>,
+    children: string | JSX.Element
+  }): JSX.Element {
+  const [anchorId, setAnchorId] = useState('');
+  const updateAnchor = () => {
+    if (target.current) {
+      setAnchorId(target.current.id);
+    }
+  };
+
+  useEffect(updateAnchor, [target]);
+
   const MenuItemClick: MouseEventHandler = event => {
-    if (!element) {
+    if (!target.current) {
       return false;
     }
     event.preventDefault();
-    element.scrollIntoView({ behavior: 'smooth' });
+    target.current.scrollIntoView({ behavior: 'smooth' });
     return false;
   }
 
   return (
     <li>
       <a
-        className={CSS.anchor}
         href={`#${anchorId}`}
+        className={CSS.anchor}
         onClick={MenuItemClick}>
         {children}
       </a>
@@ -25,27 +38,25 @@ const MenuItem: NextPage<{ anchorId: string }> = ({ anchorId, children }) => {
   )
 }
 
-const Menu: NextPage = () => (
-  <nav>
-    <ul className={`${CSS.menu} no-list-style`}>
-      <li>
-        <a href="/">Logo</a>
-      </li>
-      <MenuItem anchorId='proposta'>
-        Proposta
-      </MenuItem>
-      <MenuItem anchorId='produtos'>
-        Produtos
-      </MenuItem>
-      <MenuItem anchorId='quem-somos'>
-        Quem somos
-      </MenuItem>
-      <MenuItem anchorId='contato'>
-        Contato
-      </MenuItem>
-    </ul>
-  </nav>
-);
+const logoClick: MouseEventHandler = () => {
+  scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+}
 
+function Menu({ children }: { children: JSX.Element[] }): JSX.Element {
+  return (
+    <nav>
+      <ul className={`${CSS.menu} no-list-style`}>
+        <li>
+          <div className={CSS.logo} onClick={logoClick}>
+            <span className='accessible-label'>ALP</span>
+          </div>
+        </li>
+        {children}
+      </ul>
+    </nav>
+  );
+}
 
 export default Menu;
+export { MenuItem };

@@ -1,6 +1,18 @@
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: true
 }
 
-module.exports = nextConfig
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    Object.assign(nextConfig, {
+      images: {
+        domains: ['localhost']
+      },
+    });
+  }
+
+  return nextConfig;
+}

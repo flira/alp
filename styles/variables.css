@@ -7,22 +7,51 @@
   --color-gray-4: #A8A8A8;
   --color-gray-5: #D4D4D4;
   --color-gray-6: #fff;
-  --color-primary-1: #003166;
-  --color-primary-2: #1F4166;
-  --color-primary-3: #006FE6;
-  --color-primary-4: #4695EA;
-  --color-primary-5: #0DC0FC;
+  --color-primary-4: #0DC0FC;
+  --color-primary-3: #4695EA;
+  --color-primary-2: #006FE6;
+  --color-primary-1: #1F4166;
+  --color-primary-0: #003166;
   --color-alert: #E69100;
   --color-error: #D43F4C;
   --color-success: #32E60B;
   --color-main: var(--color-primary-3);
   --color-secondary: var(--color-alert);
+  --mdc-theme-primary: var(--color-primary-3);
+  --mdc-theme-on-primary: var(--color-gray-6);
 
   /* Font specifications */
   --font-family-default: 'Public Sans', sans-serif;
-  --font-size-default: 18px;
-  
+  --font-size-default: .875rem;
+
   /* Sizes */
-  --grid-gap: calc(var(--font-size-default) * 2);
+  --before-element-height: 156px;
+  --card-padding: 36px;
+  --card-radius: 3px;
   --phi: 1.62;
+  --grid-gap: calc(var(--font-size-default) * var(--phi));
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --font-size-default: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :root {
+    --font-size-default: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  :root {
+    --font-size-default: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  :root {
+    --font-size-default: 1.5rem;
+  }
 }

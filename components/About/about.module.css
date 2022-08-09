@@ -1,0 +1,36 @@
+.about {
+  background-image:
+    linear-gradient(180deg,
+      var(--color-gray-6) 0%,
+      var(--color-gray-5) 100%);
+  clip-path:
+    polygon(0 var(--before-element-height),
+      0 100%,
+      100% 100%,
+      100% 0);
+  padding-bottom: var(--before-element-height);
+}
+
+.content {
+  --paragraph-width: 25rem; 
+}
+
+.content p {
+  max-width: var(--paragraph-width);
+}
+
+.content p:nth-child(even) {
+  padding-left: calc(100% - var(--paragraph-width));
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){
+  .content {
+    --paragraph-width: 32rem; 
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .content {
+    --paragraph-width: 40rem; 
+  }
+}

@@ -1,0 +1,74 @@
+.anchor {
+  display: block;
+  line-height: 0;
+}
+
+.content,
+.network {
+  margin: var(--card-padding);
+}
+
+.header {
+  position: relative;
+}
+
+.name::after {
+  background: var(--color-gray-6);
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: var(--card-padding);
+  padding-left: var(--card-padding);
+  width: calc(1rem * var(--phi));
+}
+
+.name {
+  color: var(--color-alert);
+  margin: 0;
+  width: 100%;
+}
+
+.linkedin,
+.linkedinIcon {
+  height: 36px;
+  width: 36px;
+}
+
+.linkedin {
+  overflow: hidden;
+  transition: transform .3s ease;
+}
+
+.linkedin:focus,
+.linkedin:hover {
+  transform: scale(1.15);
+}
+
+.linkedin:focus {
+  outline-color: var(--color-gray-6);
+}
+
+.linkedinIcon {
+  background: url('/img/linkedin-logo.svg') 0 0 no-repeat;
+  background-size: cover;
+  display: block;
+}
+
+.network {
+  align-items: center;
+  display: flex;
+}
+
+.partner {
+  background: var(--color-primary-1) no-repeat;
+  color: var(--color-gray-6);
+  padding: 0;
+}
+
+.photo {
+  background: center center no-repeat;
+  background-size: cover;
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+  height: 250px;
+}

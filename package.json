@@ -9,6 +9,12 @@
     "test": "cypress open"
   },
   "dependencies": {
+    "@material/button": "^14.0.0",
+    "@material/floating-label": "^14.0.0",
+    "@material/line-ripple": "^14.0.0",
+    "@material/notched-outline": "^14.0.0",
+    "@material/textfield": "^14.0.0",
+    "material-icons": "^1.11.5",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"

@@ -1,0 +1,11 @@
+.label,
+.input {
+  font-size: 1em;
+}
+
+@media screen and (min-width: 1601px) {
+  .label,
+  .input {
+    font-size: .8333333rem;
+  }
+}

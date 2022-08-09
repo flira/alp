@@ -1,0 +1,18 @@
+.contact {
+  background-color: #f1f1f1;
+}
+
+.form,
+.send {
+  display: flex;
+}
+
+.form {
+  flex-direction: column;
+  gap: calc(var(--grid-gap) / 2);
+  max-width: 40em;
+}
+
+.send {
+  justify-content: flex-end;
+}

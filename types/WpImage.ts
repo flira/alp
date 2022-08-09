@@ -1,6 +1,13 @@
 export interface WpImage {
-  alt: string;
-  height: string;
-  url: string;
-  width: string;
+  alt: string,
+  caption: string,
+  description: {
+    raw: string;
+    rendered: string;
+  }
+  id: number,
+  link: string,
+  sizes: string;
+  title: string;
+  url: string,
 }

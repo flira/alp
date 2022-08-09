@@ -1,0 +1,23 @@
+.card {
+  align-items: center;
+}
+
+.icon {
+  color: var(--color-alert);
+  font-size: 4rem;
+}
+
+.icon::after {
+  background: var(--color-gray-4);
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 1rem auto calc(1rem * var(--phi));
+  width: 2rem;
+}
+
+.content,
+.name {
+  margin: 0;
+  width: 100%;
+}
