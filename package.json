@@ -5,7 +5,7 @@
     "build": "next build && next export",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start",
+    "start": "next build && next start",
     "test": "cypress open"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "@material/line-ripple": "^14.0.0",
     "@material/notched-outline": "^14.0.0",
     "@material/textfield": "^14.0.0",
+    "@material/web": "^0.1.0-alpha.0",
     "material-icons": "^1.11.5",
     "next": "12.1.0",
     "react": "17.0.2",

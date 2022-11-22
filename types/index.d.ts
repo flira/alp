@@ -5,13 +5,14 @@ import { AlpPartner, AlpPartnerContent } from './Partners';
 import { AlpPage, Pages, PageResponse } from "./Pages";
 import { AlpProduct, AlpProductContent } from './Products';
 import { backgroundProps, ResponsiveBackgroundContent } from './ResponsiveBackground';
-import { WpImage } from './WpImage';
+import { AlpImage, SizeData, WpImage, WpImageSizes } from './WpImage';
 
 export {
   AlpAbout,
   AlpAboutContent,
   AlpHero,
   AlpHeroContent,
+  AlpImage,
   AlpMenuItem,
   AlpPage,
   AlpPartner,
@@ -22,5 +23,7 @@ export {
   Pages,
   PageResponse,
   ResponsiveBackgroundContent,
-  WpImage
+  SizeData,
+  WpImage,
+  WpImageSizes
 };

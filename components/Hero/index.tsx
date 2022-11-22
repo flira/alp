@@ -1,5 +1,5 @@
-import { AlpHeroContent, WpImage } from '../../types/';
-import { getSourceSet, ResponsiveBackground } from "../../modules";
+import { AlpHeroContent, AlpImage } from '../../types/';
+import { normalizeImgData, ResponsiveBackground } from "../../modules";
 import { useState, useEffect } from 'react';
 import CSS from './hero.module.css';
 
@@ -10,7 +10,7 @@ const getOrientationHeight: () => string =
     portraitHeight : landscapeHeight;
 
 function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
-  const img: WpImage = content[0].image;
+  const image: AlpImage | void = normalizeImgData(content[0].image) ;
   const [heroHeight, setHeroHeight] = useState('0');
 
   const updateHeight: () => void = () => {
@@ -32,15 +32,14 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
 
   return (
     <section className={CSS.hero} style={{ height: heroHeight }}>
-      <ResponsiveBackground
+      {image ? <ResponsiveBackground
         background={{
-          image: `url(${img.url})`
+          image: `url(${image.src})`
         }}
-        backgroundSrcSet={getSourceSet(img)}
-        height={heroHeight} />
+        backgroundSrcSet={image.srcset}
+        height={heroHeight} /> : ''}
     </section>
   );
 };
-
 
 export default Hero;

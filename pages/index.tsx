@@ -76,8 +76,8 @@ function Home({ pages }: { pages: PageResponse[] }): JSX.Element {
 
 export async function getStaticProps() {
   const getApiRoute: (fields: string | null) => string = (fields) => {
-    const isProd: boolean = /prod/i.test(process.env.NODE_ENV);
-    const host: string = isProd ? '' : 'localhost:8000';
+    const isProd: boolean = true; //  /prod/i.test(process.env.NODE_ENV);
+    const host: string = isProd ? 'alp.toscocloud.com' : 'localhost:8000';
     const pageRoute: string = 'wp-json/wp/v2/pages';
     const _fields = fields ? `?_fields=${fields}` : '';
 

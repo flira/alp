@@ -5,7 +5,7 @@ import '@material/button/dist/mdc.button.css';
 import CSS from '../../styles/mdc/button.module.css';
 
 const Button: MDCButton =
-  ({ eventHandler, label, type }) => {
+  ({ disabled, eventHandler, label, type }) => {
     const elRef: React.RefObject<HTMLButtonElement> = React.createRef();
     const createMDCInstance: () => void = () => {
       new MDCRipple(elRef.current as HTMLButtonElement);
@@ -16,7 +16,7 @@ const Button: MDCButton =
     return (
       <button
         className={`mdc-button mdc-button--raised ${CSS.button}`}
-        disabled={false}
+        disabled={typeof disabled !== 'undefined' ? disabled : false}
         onClick={eventHandler}
         type={type ? type : 'button'}
         ref={elRef}>

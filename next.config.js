@@ -9,7 +9,7 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     Object.assign(nextConfig, {
       images: {
-        domains: ['localhost']
+        domains: ['localhost', 'alp.toscocloud.com']
       },
     });
   }

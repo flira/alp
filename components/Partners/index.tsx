@@ -1,6 +1,6 @@
 import type { AlpPage, AlpPartnerContent } from "../../types";
-import { ResponsiveBackground, getSourceSet } from "../../modules";
 import React from "react";
+import Image from "next/image";
 import CSS from './partner.module.css';
 
 function Partner({
@@ -8,16 +8,18 @@ function Partner({
   linkedin,
   name,
   photo }: AlpPartnerContent): JSX.Element {
-
   return (
     <div className={`card ${CSS.partner}`}>
       <article>
         <header className={CSS.header}>
           {photo ?
-            <ResponsiveBackground
-              background={{ image: `url(${photo.url})` }}
-              backgroundSrcSet={getSourceSet(photo)}
-              width="100%" height="300px" /> : ''}
+            <div className={CSS.photoEncap}>
+              <Image
+                className={CSS.photo}
+                alt={photo.alt}
+                layout='fill'
+                src={photo.url} />
+            </div> : ''}
           <div className={CSS.network}>
             <h2 className={CSS.name}>{name}</h2>
             {linkedin ?

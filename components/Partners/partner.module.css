@@ -65,10 +65,15 @@
   padding: 0;
 }
 
+.photoEncap {
+  height: 250px;
+  position: relative;
+  width: 100%;
+}
+
 .photo {
-  background: center center no-repeat;
-  background-size: cover;
   border-top-left-radius: var(--card-radius);
   border-top-right-radius: var(--card-radius);
   height: 250px;
+  object-fit: cover;
 }

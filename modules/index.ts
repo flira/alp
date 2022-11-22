@@ -1,5 +1,5 @@
-import {getPhotoDimensions, getSourceSet} from "./getImageData"
+import {normalizeImgData} from "./getImageData"
 import PageFilter from "./PageFilter";
 import ResponsiveBackground from "./ResponsiveBackground";
 
-export {getPhotoDimensions, getSourceSet, PageFilter, ResponsiveBackground};
+export {normalizeImgData, PageFilter, ResponsiveBackground};
