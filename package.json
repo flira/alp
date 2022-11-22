@@ -2,10 +2,10 @@
   "name": "alp",
   "private": true,
   "scripts": {
-    "build": "next build && next export",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next build && next start",
+    "start": "next start",
     "test": "cypress open"
   },
   "dependencies": {
