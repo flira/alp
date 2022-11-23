@@ -17,7 +17,7 @@
   --color-success: #32E60B;
   --color-main: var(--color-primary-3);
   --color-secondary: var(--color-alert);
-  --mdc-theme-primary: var(--color-primary-3);
+  --mdc-theme-primary: var(--color-primary-2);
   --mdc-theme-on-primary: var(--color-gray-6);
 
   /* Font specifications */
