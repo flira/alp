@@ -18,7 +18,11 @@ export default class PageFilter {
     this._title = '';
   }
 
-  filter (pageTitle: string): PageFilter {
+  filter(pageTitle: string): PageFilter {
+    if (!('filter' in this._pages)) {
+      console.warn(`"this._page" is not an array.`);
+      return this;
+    }
     const filteredPages: PageResponse[] =
       this._pages.filter(
         page => new RegExp(pageTitle, 'i').test(page.title.rendered)

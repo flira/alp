@@ -1,4 +1,5 @@
 import type { AlpPage, AlpPartnerContent } from "../../types";
+import { imageLoader } from "../../modules";
 import React from "react";
 import Image from "next/image";
 import CSS from './partner.module.css';
@@ -18,6 +19,7 @@ function Partner({
                 className={CSS.photo}
                 alt={photo.alt}
                 layout='fill'
+                loader={imageLoader}
                 src={photo.url} />
             </div> : ''}
           <div className={CSS.network}>

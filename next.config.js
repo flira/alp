@@ -2,8 +2,11 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/out',
-  reactStrictMode: true
+  images: {
+    loader: 'custom',
+    loaderFile: './modules/imageLoader.ts'
+  },
+  reactStrictMode: true,
 }
 
 module.exports = (phase) => {
