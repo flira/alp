@@ -1,3 +1,4 @@
+import '../styles/fonts.css';
 import '../styles/variables.css';
 import '../node_modules/normalize.css/normalize.css';
 import '../node_modules/material-icons/css/material-icons.css';
