@@ -1,5 +1,5 @@
 import { AlpHeroContent, AlpImage } from '../../types/';
-import { normalizeImgData, ResponsiveBackground } from "../../modules";
+import { imageLoader, normalizeImgData, ResponsiveBackground } from "../../modules";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import CSS from './hero.module.css';
@@ -39,7 +39,8 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
           height=' 125'
           src='/img/logo.svg'
           width='240'
-          />
+          loader={imageLoader}
+        />
         <div>
           {content[0].slogan ? content[0].slogan : ''}
         </div>
