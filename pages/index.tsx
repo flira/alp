@@ -1,7 +1,7 @@
 import type { AlpPartnerContent, AlpProductContent, AlpAboutContent, AlpHeroContent, PageResponse } from '../types';
 import { About, Contact, Hero, Menu, Partners, Products } from '../components';
 import { PageFilter } from '../modules';
-import { MenuItem } from '../components/Menu';
+import MenuItem from '../components/Menu/MenuItem';
 import Head from 'next/head';
 import React from 'react';
 

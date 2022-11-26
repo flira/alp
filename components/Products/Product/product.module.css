@@ -4,7 +4,13 @@
 
 .icon {
   color: var(--color-alert);
-  font-size: 4rem;
+  font-size: 8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .icon {
+    font-size: 6rem;
+  }
 }
 
 .icon::after {

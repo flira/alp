@@ -1,0 +1,9 @@
+.list,
+.nav {
+  display: flex;
+}
+
+.list {
+  background: var(--color-gray-6);
+  width: 100%;
+}

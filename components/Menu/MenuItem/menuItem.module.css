@@ -1,10 +1,17 @@
+.anchor,
+.item {
+  display: flex;
+}
+
 .anchor {
   --button-padding: calc(var(--font-size-default) / 2);
+  align-items: center;
   color: var(--color-gray-2);
-  display: inline-block;
   font-weight: 700;
+  justify-content: center;
   padding: var(--button-padding) calc(var(--button-padding) * var(--phi));
   text-decoration: none;
+  width: 100%;
 }
 
 .anchor:focus,
@@ -16,18 +23,4 @@
 .anchor:hover,
 .selected {
   color: var(--color-gray-1);
-}
-
-.logo {
-  background: url(/img/logo.svg) no-repeat center;
-  background-size: contain;
-  cursor: pointer;
-  height: 2.25em;
-  margin: 0 1em;
-  width: 2.25em;
-}
-
-.menu {
-  align-items: center;
-  display: flex;
 }

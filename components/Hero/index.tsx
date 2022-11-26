@@ -1,16 +1,17 @@
 import { AlpHeroContent, AlpImage } from '../../types/';
 import { normalizeImgData, ResponsiveBackground } from "../../modules";
 import { useState, useEffect } from 'react';
+import Image from "next/image";
 import CSS from './hero.module.css';
 
 const landscapeHeight: string = '86vh';
 const portraitHeight: string = '38vh';
 const getOrientationHeight: () => string =
-  () => matchMedia('(orientation: portrait) and (max-width: 480px)').matches ?
+  () => matchMedia('(orientation: portrait)').matches ?
     portraitHeight : landscapeHeight;
 
 function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
-  const image: AlpImage | void = normalizeImgData(content[0].image) ;
+  const image: AlpImage | void = normalizeImgData(content[0].image);
   const [heroHeight, setHeroHeight] = useState('0');
 
   const updateHeight: () => void = () => {
@@ -32,6 +33,17 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
 
   return (
     <section className={CSS.hero} style={{ height: heroHeight }}>
+      <div className={CSS.slogan}>
+        <Image
+          alt="Logo da ALP"
+          height=' 125'
+          src='/img/logo.svg'
+          width='240'
+          />
+        <div>
+          {content[0].slogan ? content[0].slogan : ''}
+        </div>
+      </div>
       {image ? <ResponsiveBackground
         background={{
           image: `url(${image.src})`
