@@ -14,7 +14,6 @@ function Menu({ children }: { children: JSX.Element[] }): JSX.Element {
   function responsiveMenu() {
     updateScreenSize();
     window.addEventListener('resize', updateScreenSize);
-    console.log(smallScreen)
     return () => {
       window.removeEventListener('resize', updateScreenSize);
     };

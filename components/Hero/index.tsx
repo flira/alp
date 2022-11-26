@@ -1,7 +1,6 @@
 import { AlpHeroContent, AlpImage } from '../../types/';
-import { imageLoader, normalizeImgData, ResponsiveBackground } from "../../modules";
+import { normalizeImgData, ResponsiveBackground } from "../../modules";
 import { useState, useEffect } from 'react';
-import Image from "next/image";
 import CSS from './hero.module.css';
 
 const landscapeHeight: string = '86vh';
@@ -34,12 +33,11 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
   return (
     <section className={CSS.hero} style={{ height: heroHeight }}>
       <div className={CSS.slogan}>
-        <Image
+        <img
           alt="Logo da ALP"
           height=' 125'
           src='/img/logo.svg'
           width='240'
-          loader={imageLoader}
         />
         <div>
           {content[0].slogan ? content[0].slogan : ''}
