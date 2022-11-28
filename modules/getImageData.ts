@@ -19,7 +19,7 @@ export function normalizeImgData(image: WpImage): AlpImage | void {
 
 function normalizeImgDescription(image: WpImage): AlpImage {
   const regex: RegExp =
-    /(?<=(height|srcset|width)=\s?[\"\'])[^\"\']+/gi;
+    /(height|srcset|width)=\s?[\"\']([^\"\']+)/gi;
   let resultArray: Array<string> | null;
   const imgData: AlpImage = {
     alt: image.alt,
@@ -31,11 +31,11 @@ function normalizeImgDescription(image: WpImage): AlpImage {
   while (resultArray = regex.exec(image.description.rendered)) {
     if (/srcset/i.test(resultArray[1])) {
       imgData[resultArray[1] as 'srcset'] =
-        resultArray[0];
+        resultArray[2];
       continue;
     }
     imgData[resultArray[1] as 'height' | 'width'] =
-      + resultArray[0];
+      + resultArray[2];
   }
   return imgData;
 }
