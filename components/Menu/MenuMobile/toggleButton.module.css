@@ -1,0 +1,45 @@
+.button {
+  background: transparent;
+  border: none;
+  display: flex;
+  padding: 0;
+}
+
+.dash {
+  transform: scale(1) rotate(0deg);
+  transition: transform .3s ease-in-out;
+}
+
+.firstDash {
+  transform-origin: 25% 25%;
+}
+
+.open .firstDash {
+  transform: rotate(45deg);
+}
+
+.secondDash {
+  transform-origin: center;
+}
+
+.open .secondDash {
+  transform: scaleX(0);
+}
+
+.thirdDash {
+  transform-origin: 25% 75%;
+}
+
+.open .thirdDash {
+  transform: rotate(-45deg);
+}
+
+.label {
+  display: block;
+  overflow: hidden;
+  text-indent: -99em;
+}
+
+.svg {
+  width: 100%;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MenuLogo from '../MenuLogo';
+import ToggleButton from './ToggleButton';
 import CSS from './menuMobile.module.css';
 
 function MenuMobile({ children }: { children: JSX.Element[] }): JSX.Element {
@@ -13,13 +14,10 @@ function MenuMobile({ children }: { children: JSX.Element[] }): JSX.Element {
     <nav className={isOpen ? CSS.show : ''}>
       <div className={CSS.menu}>
         <MenuLogo />
-        <button
-          className={CSS.toggleMenu}
-          type="button"
-          onClick={buttonClick}>
-          <div className={CSS.hamburger} />
-          <span className={CSS.label}>Abrir</span>
-        </button>
+        <ToggleButton
+          isOpen={isOpen}
+          width="28px"
+          action={buttonClick}>Abrir</ToggleButton>
       </div>
       <div className={CSS.background} onClick={buttonClick}>
         <ul className={`${CSS.list} no-list-style`}>

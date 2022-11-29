@@ -3,8 +3,10 @@ import CSS from './menuItem.module.css';
 
 function MenuItem({
   target,
+  isActive,
   children }: {
     target: React.RefObject<HTMLElement>,
+    isActive?: boolean,
     children: string | JSX.Element
   }): JSX.Element {
   const [anchorId, setAnchorId] = useState('');
@@ -13,6 +15,7 @@ function MenuItem({
       setAnchorId(target.current.id);
     }
   };
+
 
   useEffect(updateAnchor, [target]);
 
@@ -29,7 +32,7 @@ function MenuItem({
     <li className={CSS.item}>
       <a
         href={`#${anchorId}`}
-        className={CSS.anchor}
+        className={CSS.anchor + (isActive ? ' oi'+ CSS.selected : '')}
         onClick={MenuItemClick}>
         {children}
       </a>

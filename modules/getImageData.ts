@@ -29,7 +29,6 @@ function normalizeImgDescription(image: WpImage): AlpImage {
     width: 0
   };
   while (resultArray = regex.exec(image.description.rendered)) {
-    console.log(resultArray);
     if (/srcset/i.test(resultArray[1])) {
       imgData[resultArray[1] as 'srcset'] =
         resultArray[2];
