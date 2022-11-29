@@ -36,7 +36,7 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
       <div className={CSS.slogan}>
         <Image
           alt="Logo da ALP"
-          height=' 125'
+          height='125'
           src='/img/logo.svg'
           width='240'
           unoptimized />
@@ -47,10 +47,10 @@ function Hero({ content }: { content: AlpHeroContent[] }): JSX.Element {
       {image ?
         <Image
           alt=""
-          layout='fill'
           className={CSS.background}
+          layout="fill"
           src={image.src}
-          loader={imageLoader} /> : ''}
+          loader={imageLoader.bind(null, image.width / image.height)} /> : ''}
     </section>
   );
 };

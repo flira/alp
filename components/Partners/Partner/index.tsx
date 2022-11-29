@@ -1,5 +1,5 @@
-import type { AlpPartnerContent } from "../../../types";
-import { imageLoader } from "../../../modules";
+import type { AlpImage, AlpPartnerContent } from "../../../types";
+import { imageLoader, normalizeImgData } from "../../../modules";
 import React from "react";
 import Image from "next/image";
 import CSS from './partner.module.css';
@@ -9,6 +9,7 @@ function Partner({
   linkedin,
   name,
   photo }: AlpPartnerContent): JSX.Element {
+  const img: AlpImage = normalizeImgData(photo) as AlpImage;
   return (
     <div className={`card ${CSS.partner}`}>
       <article>
@@ -19,8 +20,10 @@ function Partner({
                 className={CSS.photo}
                 alt={photo.alt}
                 layout='fill'
-                loader={imageLoader}
-                src={photo.url} />
+                loader={imageLoader.bind(null, img.width / img.height)}
+                src={photo.url}
+                sizes="(max-width: 465px) 100vw,
+                        50vw" />
             </div> : ''}
           <div className={CSS.network}>
             <h2 className={CSS.name}>{name}</h2>
