@@ -2,7 +2,7 @@
   background: transparent;
   border: none;
   display: flex;
-  padding: 0;
+  padding: 0 var(--grid-gap);
 }
 
 .dash {

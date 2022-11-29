@@ -3,5 +3,6 @@
   background-size: contain;
   cursor: pointer;
   height: 3em;
+  margin: 0 var(--grid-gap);
   width: 3em;
 }
