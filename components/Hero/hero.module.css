@@ -1,3 +1,7 @@
+.background {
+  object-fit: cover;
+}
+
 .hero {
   align-items: center;
   background-color: var(--color-gray-5);
