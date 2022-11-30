@@ -19,7 +19,7 @@ const Products: AlpPage = React.forwardRef(({ content, id }, ref) => (
     ref={ref as React.RefObject<HTMLElement>}>
     <h1 className={PRODUCTS_CSS.title}>Produtos</h1>
     <div className='lim-width'>
-      <ul className={`card-grid no-list-style ${PRODUCTS_CSS.list}`}>
+      <ul className={`card-grid no-list-style`}>
         {(content as AlpProductContent[]).map(productMap)}
       </ul>
     </div>
