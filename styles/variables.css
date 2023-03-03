@@ -25,27 +25,30 @@
   --font-size-default: .875rem;
 
   /* Sizes */
-  --before-element-height: 156px;
+  --before-element-height: 60px;
   --card-padding: 36px;
   --card-radius: 3px;
   --phi: 1.62;
   --grid-gap: calc(var(--font-size-default) * var(--phi));
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   :root {
     --font-size-default: 1rem;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   :root {
+    --before-element-height: 80px;
+    --before-element-height: 3em;
     --font-size-default: 1.125rem;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (max-width: 1600px) {
   :root {
+    --before-element-height: 100px;
     --font-size-default: 1.25rem;
   }
 }
