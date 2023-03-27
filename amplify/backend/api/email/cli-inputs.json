@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "paths": {
+    "/message": {
+      "name": "/message",
+      "lambdaFunction": "sendEmail",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update"
+        ]
+      }
+    }
+  }
+}
