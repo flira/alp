@@ -1,21 +1,30 @@
 const AWS = require('aws-sdk');
 const ses = new AWS.SES({ region: 'us-east-1' });
 
-exports.handler = async (event, context) => {
-  const body = JSON.parse(event.body);
+const defaultMsg = {
+  name: 'Anonymous',
+  email: 'alp@toscocloud.com',
+  message: ''
+};
 
+function formatEmail(name, email, msg) {
+  return `
+  <h1>You've Got Mail!</h1>
+  <p>Mensagem de <a href="mailto:${email}">${name}<a/>:</p>
+  <p>${msg}</p>`;
+}
+
+exports.handler = async (event, context) => {
+  const body = Object.assign(defaultMsg, event);
   const params = {
     Destination: {
       ToAddresses: ['alp@toscocloud.com']
     },
     Message: {
       Body: {
-        Text: {
-          Data: `
-            Name: ${body.name}
-            Email: ${body.email}
-            Message: ${body.message}
-          `
+         Html: {
+          Data: formatEmail(body.name, body.email, body.message),
+          Charset: 'UTF-8'
         }
       },
       Subject: { Data: 'Novo e-mail do site' }

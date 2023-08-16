@@ -25,7 +25,6 @@ const Contact: AlpPage = React.forwardRef((props, ref) => {
 
   function submitHandler(event: React.FormEvent): false {
     event.preventDefault();
-    console.log('aqui!');
     return false;
   }
 
